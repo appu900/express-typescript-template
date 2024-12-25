@@ -4,10 +4,8 @@ import createHttpError, { HttpError } from "http-errors";
 
 const app = express();
 
-app.get("/", async (req, res, next) => {
-  const error = createHttpError(404, "Route not found");
-  next(error);
-  // res.send("Authservice pinged");
+app.get("/", (req, res, next) => {
+  res.send("Authservice pinged");
 });
 
 // global error handler
